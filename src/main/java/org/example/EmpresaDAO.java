@@ -76,7 +76,7 @@ public class EmpresaDAO {
         }
     }
 
-    // Leer todas las empresas (opcional, para fines demostrativos)
+    // Listar todas las empresas
     public List<Empresa> leerTodasLasEmpresas() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
@@ -107,7 +107,7 @@ public class EmpresaDAO {
         }
     }
 
-    // Reiniciar AUTO_INCREMENT
+    // Reinicia el valor de auto_increment de la base de datos
     public void reiniciarAutoIncrement(String tableName) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = null;

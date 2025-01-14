@@ -78,7 +78,7 @@ public class DepartamentoDAO {
         }
     }
 
-    // Leer todos los departamentos (opcional, para fines demostrativos)
+    // Listar todos los departamentos
     public List<Departamento> leerTodosLosDepartamentos() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
@@ -128,7 +128,7 @@ public class DepartamentoDAO {
         }
     }
 
-    // Reiniciar AUTO_INCREMENT
+    // Reinicia el valor de auto_increment de la base de datos
     public void reiniciarAutoIncrement(String tableName) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = null;

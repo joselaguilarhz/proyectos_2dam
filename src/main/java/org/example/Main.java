@@ -49,7 +49,7 @@ public class Main {
             }
         }
     }
-
+    //Menu principal
     private static void mostrarMenuPrincipal() {
         System.out.println("Seleccione una opción:");
         System.out.println("1. Insertar");
@@ -62,14 +62,14 @@ public class Main {
         System.out.println("8. Limpiar todas las tablas");
         System.out.println("0. Salir");
     }
-
+    //Submenu de entidades
     private static void mostrarSubMenu() {
         System.out.println("Seleccione una entidad:");
         System.out.println("1. Empresa");
         System.out.println("2. Departamento");
         System.out.println("3. Empleado");
     }
-
+    //Inserta registros
     private static void insertarRegistro(Scanner scanner, EmpresaDAO empresaDAO, DepartamentoDAO departamentoDAO, EmpleadoDAO empleadoDAO) {
         mostrarSubMenu();
         int entidad = scanner.nextInt();
@@ -134,7 +134,7 @@ public class Main {
                 System.out.println("Opción no válida.");
         }
     }
-
+    //Lee registros
     private static void leerRegistro(Scanner scanner, EmpresaDAO empresaDAO, DepartamentoDAO departamentoDAO, EmpleadoDAO empleadoDAO) {
         mostrarSubMenu();
         int entidad = scanner.nextInt();
@@ -176,7 +176,7 @@ public class Main {
                 System.out.println("Opción no válida.");
         }
     }
-
+    //Actualiza registros
     private static void actualizarRegistro(Scanner scanner, EmpresaDAO empresaDAO, DepartamentoDAO departamentoDAO, EmpleadoDAO empleadoDAO) {
         mostrarSubMenu();
         int entidad = scanner.nextInt();
@@ -239,7 +239,7 @@ public class Main {
                 System.out.println("Opción no válida.");
         }
     }
-
+    //Eliminar registros
     private static void eliminarRegistro(Scanner scanner, EmpresaDAO empresaDAO, DepartamentoDAO departamentoDAO, EmpleadoDAO empleadoDAO) {
         mostrarSubMenu();
         int entidad = scanner.nextInt();
@@ -269,7 +269,7 @@ public class Main {
                 System.out.println("Opción no válida.");
         }
     }
-
+    //Mostrar los departamentos de una empresa y el número de empleados en cada uno.
     private static void consultarEmpleadosPorDepartamento(Scanner scanner, EmpleadoDAO empleadoDAO) {
         System.out.print("Ingrese el ID del departamento: ");
         Long departamentoId = scanner.nextLong();
@@ -285,7 +285,7 @@ public class Main {
             System.out.println("No se encontraron empleados para el departamento especificado.");
         }
     }
-
+    //Consultar todos los empleados de un departamento.
     private static void mostrarDepartamentosDeEmpresa(Scanner scanner, DepartamentoDAO departamentoDAO) {
         System.out.print("Ingrese el ID de la empresa: ");
         Long empresaId = scanner.nextLong();
@@ -304,7 +304,7 @@ public class Main {
             System.out.println("No se encontraron departamentos para la empresa especificada.");
         }
     }
-
+    //Inserta los valores de ejemplos dos empresas, tres departamentos y cinco empleados en la base de datos.
     private static void insertarValoresEjemplo(EmpresaDAO empresaDAO, DepartamentoDAO departamentoDAO, EmpleadoDAO empleadoDAO) {
         // Crear dos nuevas empresas
         Empresa empresa1 = new Empresa();
@@ -371,7 +371,7 @@ public class Main {
 
         System.out.println("Valores de ejemplo insertados con éxito.");
     }
-
+    //Limpia todas las tablas
     private static void limpiarTablas(EmpresaDAO empresaDAO, DepartamentoDAO departamentoDAO, EmpleadoDAO empleadoDAO) {
         // Eliminar todos los registros de las tablas en el orden correcto
         empleadoDAO.eliminarTodosLosEmpleados();

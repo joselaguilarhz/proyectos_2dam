@@ -76,7 +76,7 @@ public class EmpleadoDAO {
         }
     }
 
-    // Leer todos los empleados (opcional, para fines demostrativos)
+    // Listar todos los empleados
     public List<Empleado> leerTodosLosEmpleados() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
@@ -121,6 +121,8 @@ public class EmpleadoDAO {
             session.close();
         }
     }
+
+    // Reinicia el valor de auto_increment de la base de datos
     public void reiniciarAutoIncrement(String tableName) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = null;
