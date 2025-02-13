@@ -9,10 +9,12 @@ public class XQueryBaseX {
             ClientSession session = new ClientSession("localhost", 1984, "Goku", "Goku");
 
             // Abrir la base de datos antes de ejecutar la consulta
-            session.execute("OPEN dragonball");
+            session.execute("OPEN DragonBallDB");
 
             // Consulta XQuery
-            String query = "for $p in //personaje return <nombre>{$p/nombre/text()}</nombre>";
+            //String query = "for $p in //personaje return <nombre>{$p/nombre/text()}</nombre>";
+            //String query = "for $p in //personaje return $p/nombre/text()";
+            String query = "for $p in //personaje return  $p/nombre ";
             String result = session.execute("XQUERY " + query);
 
             // Mostrar resultado
